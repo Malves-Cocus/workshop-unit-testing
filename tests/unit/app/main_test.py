@@ -1,6 +1,6 @@
 from json import dumps
 
-from mock import call, patch
+from mock import call, MagicMock, patch
 
 import api
 
@@ -61,14 +61,14 @@ class TestMain:
     @patch("boto3.client")
     def test_only_expected_countries_files_are_uploaded(self,
                                                         boto3_client,
-                                                        network_patch,
-                                                        networks_patch):
+                                                        network_patch: MagicMock,
+                                                        networks_patch: MagicMock):
         from main import main
 
         main()
 
         # Assert the "networks" API is called once
-        assert networks_patch.call_count == 1
+        networks_patch.assert_called_once()
 
         # Assert the "network" API receives the correct arguments
         network_patch.assert_has_calls([

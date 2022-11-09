@@ -76,7 +76,7 @@ class TestCityBikes:
                                                                     get_patch: MagicMock):
         response = self.api.networks()
 
-        assert get_patch.call_count == 1
+        get_patch.assert_called_once()
         assert response == {
             "success": False,
             "metadata": {
@@ -131,7 +131,7 @@ class TestCityBikes:
                                                                    get_patch: MagicMock):
         response = self.api.network(by_id="foobar")
 
-        assert get_patch.call_count == 1
+        get_patch.assert_called_once()
         assert response == {
             "success": False,
             "metadata": {
