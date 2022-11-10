@@ -3,7 +3,7 @@ APP_ROOT_PATH := ./app
 TESTS_PATH := ./tests
 TESTS_EVENTS_PATH := ${TESTS_PATH}/events
 LOCALSTACK_IMAGE := "localstack/localstack:1.2.0"
-LOCALSTACK_CONTAINER_NAME := "workshop-unit-test"
+LOCALSTACK_CONTAINER_NAME := "workshop-unit-testing"
 
 install:
 	@pip install -r ${APP_ROOT_PATH}/requirements.txt
