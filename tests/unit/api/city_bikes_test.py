@@ -28,7 +28,7 @@ def mock_requests_exception(*_, **__):
 
 class TestCityBikes:
 
-    def setup(self):
+    def setup_method(self):
         self.api = api.CityBikes()
 
     @patch("requests.get", return_value=MockResponse(
