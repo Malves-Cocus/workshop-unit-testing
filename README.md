@@ -66,6 +66,6 @@ single one.
 To solve it, a file named `api_parser_test.py` was created to handle only the `@api()` decorator, and all tests
 regarding it must be **moved** and **refactored** into this new file.
 
-# How to send me
+# How to submit
 
 After finishing all changes, upload your branch to my repository and create a pull request to the main branch.
