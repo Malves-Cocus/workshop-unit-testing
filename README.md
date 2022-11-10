@@ -24,6 +24,7 @@ The script to be executed is `main.py` and if everything is running successfully
 able to download the file from local S3 by pasting the following URL into your browser:
 
 `http://localhost:4566/s3-workshop-unit-testing/[here-you-paste-the-object-key]`
+
 **Example:** `http://localhost:4566/s3-workshop-unit-testing/DK/Copenhagen/bycyklen.JSON`
 
 ## Running all unit tests
