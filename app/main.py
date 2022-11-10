@@ -31,3 +31,7 @@ def main():
             s3.put_object(Bucket="s3-workshop-unit-testing", Key=key, Body=dumps(bike_detail))
         else:
             print("main: api returned an error", dumps(r_network))
+
+
+if __name__ == "__main__":  # pragma: no cover
+    main()
