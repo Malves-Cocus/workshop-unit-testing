@@ -29,7 +29,7 @@ able to download the file from local S3 by pasting the following URL into your b
 
 ## Running all unit tests
 
-- Be sure the virtual env (.venv) activated
+- Be sure the virtual env (.venv) is activated
 - make unit-tests
 
 # Challenge
