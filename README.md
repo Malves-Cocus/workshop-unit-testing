@@ -1,4 +1,8 @@
-# How to execute locally
+# Solution overview
+
+![documentation/solution-overview.png](documentation/solution-overview.png)
+
+# How to execute
 
 ## Requisites
 
