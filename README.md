@@ -8,18 +8,21 @@
 
 - Docker (https://docs.docker.com/engine/install/)
 - Python (at least 3.8)
-- Make (default Linux/macOS)
+- GNU Make (default Linux/macOS)
 
-## Running it locally
+### Setting up
 
 - Clone the repository
 - cd workshop-unit-testing
 - python3 -m venv .venv
 - source .venv/bin/activate
 - make install
-- make localstack-start
 
 Note: Always be sure that IDE is using the virtual env (.venv) and not your system default python.
+
+### Running it locally
+- Be sure the virtual env (.venv) is activated
+- make run
 
 To execute it through IDE, make the `app` folder available inside `PYTHONPATH` variable. Using PyCharm, you can
 right-click `app` folder > Mark Directory as > Sources Root. The folder icon will be displayed in blue color.
@@ -29,9 +32,9 @@ able to download the file from local S3 by pasting the following URL into your b
 
 `http://localhost:4566/s3-workshop-unit-testing/[here-you-paste-the-object-key]`
 
-**Example:** `http://localhost:4566/s3-workshop-unit-testing/DK/Copenhagen/bycyklen.JSON`
+The script will provide a log line `main: file uploaded {url}` once clicked will download the file
 
-## Running all unit tests
+### Running all unit tests
 
 - Be sure the virtual env (.venv) is activated
 - make unit-tests

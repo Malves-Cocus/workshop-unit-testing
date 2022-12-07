@@ -28,7 +28,6 @@ localstack-start: localstack-stop
 	${LOCALSTACK_IMAGE}
 
 	@python ./build/localstack.py
-	@docker logs -f ${LOCALSTACK_CONTAINER_NAME}
 
 localstack-stop:
 	@echo ">>> Stopping container if it is running"
@@ -38,8 +37,12 @@ localstack-stop:
 	fi
 	@echo ">>> Done"
 
+run: localstack-start
+	export PYTHONPATH=${APP_ROOT_PATH} \
+	&& python app/main.py
+
 unit-tests:
 	export PYTHONPATH=${APP_ROOT_PATH} \
-	&& SVC_LOG_LEVEL=${SVC_LOG_LEVEL} pytest --cov-report term-missing --cov-config=.coveragerc --cov=${APP_ROOT_PATH}
+	&& pytest --cov-report term-missing --cov-config=.coveragerc --cov=${APP_ROOT_PATH}
 
 default: install
